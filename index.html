@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Facebook</title>
+</head>
+<style>
+    .dropbtn {
+        color: black;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+        background:#eee;
+
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {background-color: #ddd;}
+
+    .show {display: block;}
+</style>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <img style="width: 7%" src="logo.png" alt="Logo">
+            <input style="width: 35%" type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-middle">
+            <a href="#" class="active">
+                <i class="fa fa-home"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa fa-user-friends"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa fa-play-circle"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa fa-users"></i>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <span class="profile"></span>
+            <a href="">
+                <i class="fa fa-bell"></i>
+            </a>
+
+            <a>
+                <i  onclick="myFunction()"class="dropbtn fas fa-ellipsis-h"></i><br>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="register.html">Logout</a>
+                </div>
+            </a>
+
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="left-panel">
+            <ul>
+                <li>
+
+                    <span class="profile"></span>
+                    <a style="text-decoration: none; color: black" href="profile.html">
+                    <p id="userName"> </p>
+                    </a>
+                </li>
+                <li>
+                    <i class="fa fa-user-friends"></i>
+                    <p>Friends</p>
+                </li>
+                <li>
+                    <i class="fa fa-play-circle"></i>
+                    <p>Videos</p>
+                </li>
+                <li>
+                    <i class="fa fa-flag"></i>
+                    <p>Pages</p>
+                </li>
+                <li>
+                    <i class="fa fa-users"></i>
+                    <p>Groups</p>
+                </li>
+                <li>
+                    <i class="fa fa-bookmark"></i>
+                    <p>Bookmark</p>
+                </li>
+                <li>
+                    <i class="fab fa-facebook-messenger"></i>
+                    <p>Inbox</p>
+                </li>
+                <li>
+                    <i class="fas fa-calendar-week"></i>
+                    <p>Events</p>
+                </li>
+                <li>
+                    <i class="fa fa-bullhorn"></i>
+                    <p>Ads</p>
+                </li>
+                <li>
+                    <i class="fas fa-hands-helping"></i>
+                    <p>Offers</p>
+                </li>
+                <li>
+                    <i class="fas fa-briefcase"></i>
+                    <p>Jobs</p>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                    <p>Favourites</p>
+                </li>
+            </ul>
+
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Advance</a>
+                <a href="#">More</a>
+            </div>
+        </div>
+        <div class="middle-panel">
+
+            <div class="story-section">
+
+                <div class="story create">
+                    <div class="dp-image">
+                        <img src="./images/dp.jpg" alt="Profile pic">
+                    </div>
+                    <span class="dp-container">
+                        <i class="fa fa-plus"></i>
+                    </span>
+                    <span class="name">Create Story</span>
+                </div>
+
+                <div class="story">
+                    <img src="./images/model.jpg" alt="story">
+                    <div class="dp-container">
+                        <img src="./images/girl.jpg" alt="">
+                    </div>
+                    <p class="name">Mahmoud Diab</p>
+                </div>
+
+                <div class="story">
+                    <img src="./images/boy.jpg" alt="Story image">
+                    <span class="dp-container">
+                        <img src="./images/dp.jpg" alt="Profile pic">
+                    </span>
+                    <span class="name">Adb El-rahman Mohammed</span>
+                </div>
+
+                <div class="story">
+                    <img src="./images/mountains.jpg" alt="Story image">
+                    <span class="dp-container">
+                        <img src="./images/boy.jpg" alt="Profile pic">
+                    </span>
+                    <span class="name">Eman Osman</span>
+                </div>
+
+                <div class="story">
+                    <img src="2.jpg" alt="Story image">
+                    <span class="dp-container">
+                        <img src="3.jpg" alt="Profile pic">
+                    </span>
+                    <span class="name">Ali Diab</span>
+                </div>
+            </div>
+
+            <div class="post create">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="me.jpg" alt="">
+                    </div>
+                    <input id="create_post" type="text" placeholder="What's on your mind, Mahmoud ?" />
+                </div>
+                
+                <div class="post-bottom">
+                    <div class="action">
+                        <i class="fa fa-video"></i>
+                        <span>Live video</span>
+                    </div>
+                    <div onclick="createPost()"  class="action">
+                        <i class="fa fa-image"></i>
+                        <span>Photo/Video</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-smile"></i>
+                        <span>Feeling/Activity</span>
+                    </div>
+                </div>
+            </div>
+            <div id="newPost" class="post" style="display: none">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="me.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Mahmoud Diab</p>
+                        <span class="time">12 hrs ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <div id="appendPost"  class="post-content">
+                </div>
+
+                <div class="post-bottom">
+                    <div class="action">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="me.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Mahmoud Diab</p>
+                        <span class="time">12 hrs ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <div id="post1" class="post-content">
+                    <br>
+                    <br>
+
+                </div>
+                
+                <div class="post-bottom">
+                    <div class="action">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./images/girl.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Nada Diab</p>
+                        <span class="time">2 days ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <div class="post-content">
+                    <p id="post2"></p>
+
+                    <img id="avatar" src="images/mountains.jpg" />
+                </div>
+                
+                <div class="post-bottom">
+                    <div class="action">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./images/boy.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Haidy Mohamed</p>
+                        <span class="time">1 week ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div class="post-content">
+                    <p id="post3" ></p>
+
+                    <img src="./images/girl_with_light.jpg" alt="Mountains">
+                </div>
+                <div class="post-bottom">
+                    <div class="action">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right-panel">
+            <div class="pages-section">
+                <h4>Your pages</h4>
+                <a class='page' href="#">
+                    <div class="dp">
+                        <img src="me.jpg" alt="">
+                    </div>
+                    <p class="name">My Page</p>
+                </a>
+
+                <a class='page' href="#">
+                    <div class="dp">
+                        <img src="./images/dp.jpg" alt="">
+                    </div>
+                    <p class="name">My page 2</p>
+                </a>
+            </div>
+
+            <div class="friends-section">
+                <h4>Friends</h4>
+                <a class='friend' href="#">
+                    <div class="dp">
+                        <img src="./images/dp.jpg" alt="">
+                    </div>
+                    <p class="name">Saad Abd-raheim</p>
+                </a>
+
+                <a class='friend' href="#">
+                    <div class="dp">
+                        <img src="./images/shoes.jpg" alt="">
+                    </div>
+                    <p class="name">Mada</p>
+                </a>
+
+                <a class="friend" href="#">
+                    <div class="dp">
+                        <img src="./images/boy.jpg" alt="">
+                    </div>
+                    <p class="name">Emad Mahmoud</p>
+                </a>
+
+                <a class="friend" href="#">
+                    <div class="dp">
+                        <img src="./images/model.jpg" alt="">
+                    </div>
+                    <p class="name">Nayra Essam</p>
+                </a>
+
+                <a class="friend" href="#">
+                    <div class="dp">
+                        <img src="./images/boy.jpg" alt="">
+                    </div>
+                    <p class="name">Mahmoud Eid</p>
+                </a>
+
+                <a class="friend" href="#">
+                    <div class="dp">
+                        <img src="./images/dp.jpg" alt="">
+                    </div>
+                    <p class="name">Samar Diab</p>
+                </a>
+
+                <a class="friend" href="#">
+                    <div class="dp">
+                        <img src="./images/model.jpg" alt="">
+                    </div>
+                    <p class="name">Sajd Ahmed</p>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+       // event.preventDefault()
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+//get Posts From API
+    var xhr= new XMLHttpRequest();
+    xhr.open("GET","https://jsonplaceholder.typicode.com/posts");
+    xhr.send();
+    //console.log(xhr)
+    xhr.addEventListener("readystatechange",function (){
+        if (xhr.readyState==4&&xhr.status==200){
+            //  console.log(xhr.response)
+            var res = xhr.response;
+            var data = JSON.parse(res);
+          //  console.log(data)
+            var post1 = data[0].body
+            var post2 = data[2].body
+            var post3 = data[3].body
+
+          //  console.log(post3)
+           document.getElementById('post1').innerHTML='From API '+post1
+            document.getElementById('post2').innerHTML='From API '+post2
+            document.getElementById('post3').innerHTML = 'From API '+post3;
+        }
+    })
+//get Name From Cookies
+        usersData = []
+        var cookies = document.cookie;
+        var result = cookies.split(";")
+        for (var i = 0; i < result.length; i++) {
+            var data = result[i].split("=");
+            usersData.push(data[1])
+        }
+    document.getElementById('userName').innerHTML = usersData[0];
+
+//get photo of posts
+    var xhr1= new XMLHttpRequest();
+    xhr1.open("GET","https://reqres.in/api/users/1");
+    xhr1.send();
+    console.log(xhr1)
+    xhr1.addEventListener("readystatechange",function (){
+        if (xhr1.readyState==4&&xhr1.status==200){
+            //  console.log(xhr.response)
+            var res = xhr1.response;
+            var data2 = JSON.parse(res).data;
+            var data2 = JSON.parse(res).data;
+            console.log(data2)
+            var avatar= data2.avatar
+           document.getElementById('avatar').src = avatar;
+        }
+    })
+function createPost(){
+        var postVal = document.getElementById('create_post').value;
+     //   console.log(postVal)
+    const newPost = document.createElement('p');
+    document.getElementById('appendPost').append(newPost)
+    newPost.innerHTML=postVal;
+    document.getElementById('newPost').style.display='block';
+}
+
+
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+
+<link href="game.css" type="text/css" rel="stylesheet"/>
+<body>
+    <div class="header">
+        <h2>Score : <span id="score">0</span></h2>
+        &nbsp;
+        <h2>Timer : <span id="time"></span>s</h2>
+    </div>
+    <div class="container">
+        <div class="square" id="1"></div>
+        <div class="square" id="2"></div>
+        <div class="square" id="3"></div>
+        <div class="square" id="4"></div>
+        <div class="square" id="5"></div>
+        <div class="square" id="6"></div>
+        <div class="square" id="7"></div>
+        <div class="square" id="8"></div>
+        <div class="square" id="9"></div>
+        <div class="square" id="10"></div>
+        <div class="square" id="11"></div>
+        <div class="square" id="12"></div>
+        <div class="square" id="13"></div>
+        <div class="square" id="14"></div>
+        <div class="square" id="15"></div>
+        <div class="square resp" id="16"></div>
+    </div>
+    <div class="footer">
+        <div class="difficulty">
+            <button class="option" id="easy" onclick="easy()">Easy</button>
+        </div>
+        <button onclick="reload()">Reload</button>
+    </div>
+    <button class="start" onclick="moveMole()">Start</button>
+    <div class="finalScoreWrapper">
+        <div class="finalScore">
+            <h1>GAME OVER</h1>
+            <h1>Score : <span id="result"></span></h1>
+            <button onclick="replay()">Play Again</button>
+        </div>
+    </div>
+    <script>
+const square = document.querySelectorAll('.square');
+const mole = document.querySelectorAll('.mole');
+const time = document.querySelector('#time');
+const score = document.querySelector('#score');
+const finalScore = document.querySelector('#result');
+const finalScoreBoard = document.querySelector('.finalScoreWrapper');
+const difficulty = document.querySelector('.difficulty');
+const options = document.querySelectorAll('.option');
+const easyL = document.querySelector('#easy');
+const normalL = document.querySelector('#normal');
+const hardL = document.querySelector('#hard');
+const resp = document.querySelector('.resp'); //for resp style
+
+let intFrameWidth = window.innerWidth; // get viewport width
+let result = 0;
+let currentTime = time.textContent = 30;
+let scoreList = "" //curently not being used
+let level = 1000;  // difficulty level default
+
+//randomising 'mole' class position on 'square' div
+function randomSquare(){
+    square.forEach(className => {
+        className.classList.remove('mole')
+    })
+    let randomPosition = square[Math.floor(Math.random() * 16)];
+    randomPosition.classList.add('mole');
+    hitPosition = randomPosition.id;
+}
+
+//checking the position of click to match it with mole position
+square.forEach(id => {
+    id.addEventListener('mouseup', () => {
+        if(id.id===hitPosition){
+            result += 1;
+            score.textContent = result;
+        }
+    })
+})
+
+//interval of mole pop up
+function moveMole(){
+    let timer = null;
+    difficulty.classList.add('block');
+    for(let i=0; i<options.length; i++){
+        options[i].classList.add('block')
+    } 
+    if(finalScoreBoard){finalScoreBoard.classList.remove('visible');}
+    timer = setInterval(randomSquare,level)
+    document.querySelector('.start').classList.add('disable');
+
+    //count down time
+    function countDown(){
+        currentTime --
+        time.textContent = currentTime;
+        if(currentTime===-1){
+            clearInterval(timer2);
+            clearInterval(timer);
+            time.textContent = 0;
+            finalScore.textContent = result;
+            finalScoreBoard.classList.add('visible');
+            difficulty.classList.remove('block');
+            scoreList += result; //for previous result
+        }
+    }
+    let timer2 = setInterval(countDown,1000);
+}
+
+//playing
+function easy(){
+    level = 1200;
+    normalL.classList.remove('selected');
+    hardL.classList.remove('selected');
+    easyL.classList.add('selected');
+}
+//replay
+function replay(){
+    currentTime = time.textContent = 30;
+    result = score.textContent = 0;
+    moveMole();
+}
+
+//reload game
+function reload(){
+    //window.location.reload();
+    alert('.location.reload()')
+}
+
+//resp style
+if(intFrameWidth<=580){
+    resp.remove();
+}
+    </script>
+</body>

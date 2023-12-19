@@ -1,0 +1,226 @@
+:root{
+    --main: rgb(13, 102, 58);
+    --text: #ffff;
+    --alt: rgb(31, 31, 31);
+    --alert: rgb(29, 128, 185);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    height: 100vh;
+    width: auto;
+    background: url('game.gif');
+    background-size:250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;;
+}
+h1{
+    color: plum;
+    padding: 10px;
+    user-select: none;
+}
+h2{
+    color: var(--text);
+    padding: 10px;
+    user-select: none;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+}
+.square{
+    width: 100px;
+    height: 100px;
+    background: url('1.png');
+    background-size: cover;
+    margin: 3px 20px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+}
+.mole{
+    transition: 0.1s;
+    background: url('0.png');
+    background-size: cover;
+    cursor: pointer;
+}
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 99;
+}
+.start{
+    position: absolute;
+    font-size: 56px;
+}
+.disable{
+    visibility: hidden;
+}
+.finalScoreWrapper{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.finalScore{
+    position: absolute;
+    background: var(--text);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.finalScore button{
+    background:violet;
+}
+.visible{
+    visibility: visible;
+}
+.block{
+    cursor: default;
+    user-select: none;
+    filter: opacity(0.5);
+}
+.block:hover, .block:focus{
+    background: none;
+    color: var(--text);
+}
+.selected{
+    background: var(--text);
+    color: var(--main);
+}
+/*For mobile */
+@media only screen and (max-width:580px) {
+    .container{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .square {
+        margin: 1.5px 20px;
+    }
+}
+@media only screen and (max-width:430px) {
+    button{
+        font-size: 22px;
+        padding: 10px 20px;
+    }
+    .square {
+        margin: 1.5px 10px;
+    }
+    h2{
+        padding: 3px;
+    }
+}
+@media only screen and (max-width:370px) {
+    button{
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+    .square {
+        width: 80px;
+        height: 80px;
+        margin: 1px 7px;
+    }
+    h2{
+        padding: 1.5px;
+        font-size: 18px;
+    }
+}
+@media only screen and (max-height:645px) {
+    button{
+        margin-top: 0;
+    }
+    .square {
+        width: 90px;
+        height: 90px;
+    }
+    h2{
+        padding: 1.5px 3px;
+    }
+}
+/*for big screen*/
+@media only screen and (min-width:800px) and (min-height:800px){
+    h2{
+        padding: 20px;
+        font-size: 32px;
+    }
+    button{
+        padding: 15px 40px;
+        font-size: 32px;
+    }
+    .square {
+        width: 120px;
+        height: 120px;
+        margin: 3px 25px;
+    }
+}
+@media only screen and (min-width:1000px) and (min-height:1000px) {
+    h2{
+        font-size: 45px;
+    }
+    button{
+        font-size: 45px;
+    }
+    .square {
+        width: 150px;
+        height: 150px;
+        margin: 3px 30px;
+    }
+    .difficulty {
+        outline: 3.5px solid var(--text);
+    }
+}
+@media only screen and (min-width:1250px) and (min-height:1250px){
+    h2{
+        font-size: 52px;
+    }
+    button{
+        font-size: 52px;
+    }
+    .square {
+        width: 200px;
+        height: 200px;
+        margin: 3px 40px;
+    }
+    .difficulty {
+        outline: 5px solid var(--text);
+    }
+}
+@media only screen and (orientation: portrait) and (min-aspect-ratio: 1/2) and (min-height:1000px){
+    .square {
+        margin: 30px 40px;
+    }
+    h2{
+        font-size: 45px;
+    }
+    button{
+        font-size: 45px;
+    }
+
+}
